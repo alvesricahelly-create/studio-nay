@@ -26,12 +26,13 @@ html, body {
 
 .page {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 0;
 }
 
 .blobs {
@@ -55,12 +56,16 @@ html, body {
 .blob--bl { width: 384px; height: 384px; bottom: -190px; left: -130px; opacity: 0.7; }
 
 .content {
+  --design-w: 464px;
+  --design-h: 900px;
   position: relative;
   z-index: 1;
-  width: 100%;
-  max-width: 464px;
+  width: var(--design-w);
   text-align: center;
-  padding: 24px 0 48px;
+  padding: 0 20px;
+  box-sizing: content-box;
+  transform: scale(min(1, calc(100vh / var(--design-h))));
+  transform-origin: center center;
 }
 
 .avatar {
@@ -235,9 +240,9 @@ html, body {
   text-align: center;
 }
 
-@media (max-width: 480px) {
-  .content { padding-top: 8px; }
-  .title { font-size: 26px; line-height: 32px; }
-  .bio { font-size: 13.5px; }
-  .link { padding: 14px 16px; }
+@media (max-width: 520px) {
+  .content {
+    --design-w: 100vw;
+    transform: scale(min(1, calc(100vh / var(--design-h))));
+  }
 }
