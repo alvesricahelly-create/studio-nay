@@ -230,6 +230,24 @@ html, body {
   flex-shrink: 0;
 }
 
+.info__link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+.info__link:hover,
+.info__link:focus-visible {
+  color: var(--rose-deep);
+  outline: none;
+}
+.info__link:hover span,
+.info__link:focus-visible span {
+  text-decoration: underline;
+}
+
 .footer {
   margin: 40px 0 0;
   font-size: 10.4px;
