@@ -240,9 +240,19 @@ html, body {
   text-align: center;
 }
 
-@media (max-width: 520px) {
+@media (max-width: 640px) {
+  .page {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: visible;
+    padding: 40px 20px;
+    align-items: flex-start;
+  }
   .content {
-    --design-w: 100vw;
-    transform: scale(min(1, calc(100vh / var(--design-h))));
+    width: 100%;
+    max-width: 464px;
+    padding: 0;
+    transform: none;
   }
 }
